@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Running Tracker</string>
+    <string name="title_activity_maps">Running Tracker</string>
+    <string name="title_activity_tracker_record">Running Tracker Record</string>
+</resources>

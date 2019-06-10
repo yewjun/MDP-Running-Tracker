@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.gpsmap.TrackerRecord">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <fragment
+            android:id="@+id/map2"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/startTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Start Time :"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/showStartTime"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="20dp"
+        android:text="-- : -- : --"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintStart_toEndOf="@+id/startTimeText"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/showEndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:text="-- : -- : --"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintStart_toEndOf="@+id/endTimeText"
+        app:layout_constraintTop_toBottomOf="@+id/showStartTime" />
+
+    <TextView
+        android:id="@+id/showDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="20dp"
+        android:text="-- : -- : --"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintStart_toEndOf="@+id/durationText"
+        app:layout_constraintTop_toBottomOf="@+id/showEndTime" />
+
+    <TextView
+        android:id="@+id/endTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:text="End Time :"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startTimeText" />
+
+    <TextView
+        android:id="@+id/durationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:text="Duration :"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endTimeText" />
+
+    <TextView
+        android:id="@+id/distanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:text="Distance in km : "
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/durationText" />
+
+    <TextView
+        android:id="@+id/showTotalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="20dp"
+        android:text="-- km"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintStart_toEndOf="@+id/distanceText"
+        app:layout_constraintTop_toBottomOf="@+id/showDuration" />
+
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="82dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="15dp"
+        android:onClick="onDelete"
+        android:text="Delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/speedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:text="Average Speed (km/h) :"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/distanceText" />
+
+    <TextView
+        android:id="@+id/showSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="--- km/h"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintStart_toEndOf="@+id/speedText"
+        app:layout_constraintTop_toBottomOf="@+id/showTotalTime" />
+
+
+</android.support.constraint.ConstraintLayout>
